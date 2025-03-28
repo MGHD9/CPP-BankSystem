@@ -12,7 +12,7 @@ int main() {
     switch (letter) {
     case 'y':
         short pass;
-        std::cout << "You chose to create an account! Choose a password of 4 numbers:" << std::endl;
+        std::cout << "You chose to create an account! Choose a password of 4 numbers :" << std::endl;
         std::cin >> pass;
         bankaccount = std::make_unique<Bank_Account>(0, pass);
         break;
