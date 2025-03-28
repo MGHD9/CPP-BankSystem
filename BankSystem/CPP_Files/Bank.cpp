@@ -8,7 +8,7 @@
 int main() {
     std::unique_ptr<Bank_Account> bankaccount;
     char letter;
-    std::cout << "Welcome to Bank System!" << std::endl;
+    std::cout << "\033[33mWelcome to Bank system!\033[0m" << std::endl;
     std::cout << "Create an account: yes (y) or no (n)? " << std::endl;
     std::cin >> letter;
 
