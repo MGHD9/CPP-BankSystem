@@ -1,6 +1,9 @@
+// Bank File / Main File
+//
+// Projet créer par Abso :)
+
 #include "resources.h"
 #include "management.h"
-
 
 int main() {
     std::unique_ptr<Bank_Account> bankaccount;

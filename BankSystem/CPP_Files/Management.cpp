@@ -1,3 +1,7 @@
+// Management File
+//
+// Projet créer par Abso :)
+
 #include "resources.h"
 #include "management.h"
 
@@ -17,7 +21,12 @@ void Bank_Account::Withdraw(double cash) {
 	else m_bank_money - cash;
 }
 
+//getter
 double Bank_Account::GetBankMoney() const { return m_bank_money; }
 short Bank_Account::GetBankPassword() const { return m_bank_password; }
 
+//setter
 void Bank_Account::SetBankPassword(short password) { m_bank_password = password; }
+
+//Is Connected to Bank Account
+bool Bank_Account::IsConnected() const { return m_isconnected; }
