@@ -20,12 +20,11 @@ public:
 	//getters
 	double GetBankMoney() const;
 	short GetBankPassword() const;
+	bool IsConnected() const;
 
 	//setter
 	void SetBankPassword(short password);
-
-	//is connected to bank account?
-	bool IsConnected() const;
+	void SetUserConnectedToBankAccount(bool status);
 
 private:
 	bool m_isconnected;

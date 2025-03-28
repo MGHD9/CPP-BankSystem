@@ -18,6 +18,7 @@ int main() {
         std::cout << "You chose to create an account! Choose a password of 4 numbers :" << std::endl;
         std::cin >> pass;
         bankaccount = std::make_unique<Bank_Account>(0, pass);
+        bankaccount->SetUserConnectedToBankAccount(false);
         break;
     case 'n':
         std::cout << "You chose not to create an account!" << std::endl;
@@ -42,7 +43,15 @@ int main() {
         }
     } while (passlogin != bankaccount->GetBankPassword());
 
-    std::cout << "\033[32mWelcome to your Bank Account!\033[0m" << std::endl;
+    bankaccount->SetUserConnectedToBankAccount(true);
+    if (bankaccount->IsConnected()) {
+        std::cout << "\033[32mWelcome to your Bank Account!\033[0m" << std::endl;
+    }
+    else {
+        std::cout << "\033[31mYou are not connected to your account!\033[0m" << std::endl;
+    }
+    
+    
 
     return 0;
 }

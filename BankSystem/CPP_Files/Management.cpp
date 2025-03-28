@@ -24,9 +24,15 @@ void Bank_Account::Withdraw(double cash) {
 //getter
 double Bank_Account::GetBankMoney() const { return m_bank_money; }
 short Bank_Account::GetBankPassword() const { return m_bank_password; }
+bool Bank_Account::IsConnected() const { return m_isconnected; }
 
 //setter
 void Bank_Account::SetBankPassword(short password) { m_bank_password = password; }
-
-//Is Connected to Bank Account
-bool Bank_Account::IsConnected() const { return m_isconnected; }
+void Bank_Account::SetUserConnectedToBankAccount(bool status) {
+	if (status = true) {
+		m_isconnected = true;
+	}
+	else {
+		m_isconnected = false;
+	}
+}
