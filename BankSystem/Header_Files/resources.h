@@ -6,6 +6,7 @@
 #define _RESOURCES_
 #endif
 
+#include <cstdlib> 
 #include <iostream>
 #include <string>
 #include <memory>

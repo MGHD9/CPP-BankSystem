@@ -50,8 +50,47 @@ int main() {
     else {
         std::cout << "\033[31mYou are not connected to your account!\033[0m" << std::endl;
     }
-    
-    
 
+    choose_options:
+    short choice_number;
+    std::cout << "\033[33mChoose an options:\033[0m" << std::endl;
+    std::cout << "1. Deposit money" << std::endl;
+    std::cout << "2. Withdraw money" << std::endl;
+    std::cout << "3. Get my bank password" << std::endl;
+    double bank_money = bankaccount->GetBankMoney();
+    std::cout << "Bank : " << bank_money << "$" << std::endl;
+    std::cin >> choice_number;
+    switch (choice_number) {
+    case 1 :
+        double deposit_money;
+        std::cout << "You have chosen 1! Deposit money" << std::endl;
+        std::cout << "How many $ do you want to deposit?" << std::endl;
+        std::cin >> deposit_money;
+        std::cout << "Do you really want to deposit : " << deposit_money << "$" << " in the bank" << std::endl;
+        std::cout << "\033[33mChoose an options:\033[0m" << std::endl;
+        std::cout << "Yes = y" << std::endl;
+        std::cout << "No = n" << std::endl;
+        char letter;
+        std::cin >> letter;
+        switch (letter) {
+        case 'y' :
+            bankaccount->Deposit(deposit_money);
+            break;
+        case 'n' :
+            system("cls");
+            goto choose_options;
+            break;
+        }
+        break;
+    case 2 :
+        std::cout << "Vous avez choisi 2 ! Retirer bank" << std::endl;
+        break;
+    case 3 :
+        std::cout << "Vous avez choisi 3 ! Get bank password" << std::endl;
+        break;
+    default :
+        std::cout << "Vous devez choisir une option valide !" << std::endl;
+        break;
+    }
     return 0;
 }
